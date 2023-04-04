@@ -28,9 +28,16 @@ public class LineComparison {
 		double length1 = Math.sqrt((Math.pow((x2-x1), 2)+(Math.pow((y2-y1), 2))));
 		double length2 = Math.sqrt((Math.pow((p2-p1), 2)+(Math.pow((q2-q1), 2))));
 		
-		if(length1 == length2)
+		Double value1 = new Double(length1);
+		Double value2 = new Double(length2);
+		
+		int compare = value1.compareTo(value2);
+		
+		if(compare == 0)
 			System.out.println("Two Lines are Equal !!!");
+		else if(compare > 0)
+			System.out.println("Line1 is Greater Than Line2...");
 		else
-			System.out.println("Two Lines are Not Equal...");
+			System.out.println("Line1 is Lesser Than Line2...");
 	}
 }
